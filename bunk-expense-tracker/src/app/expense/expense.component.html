@@ -1,0 +1,50 @@
+<div class="expenses">
+  <h2>Expenses</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Expense</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let expense of expenses">
+        <td><input [(ngModel)]="expense.name" placeholder="Name"></td>
+        <td><input [(ngModel)]="expense.amount" placeholder="Expense"></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <form (ngSubmit)="addExpense()" *ngIf="!isSettled">
+    <input type="text" name="name" [(ngModel)]="newExpense.name" placeholder="Name">
+    <input type="number" name="amount" [(ngModel)]="newExpense.amount" placeholder="Expense">
+    <button type="submit">Add Expense</button>
+  </form>
+
+  <div *ngIf="total">
+    <div class="summation">
+      <div>Total: {{total}}</div>
+      <div>Equal share: {{equalShare}}</div>
+    </div>
+    <table *ngIf="payouts.length">
+      <thead>
+        <tr>
+          <th>Owes</th>
+          <th>Owed</th>
+          <th>Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let payout of payouts">
+          <td>{{payout.owes}}</td>
+          <td>{{payout.owed}}</td>
+          <td>{{payout.amount}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <button (click)="calculatePayouts()">Settle Up</button>
+</div>

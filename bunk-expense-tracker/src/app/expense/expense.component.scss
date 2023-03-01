@@ -1,0 +1,72 @@
+/* expenses.component.scss */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+
+  th, td {
+  padding: 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  }
+
+  th {
+  font-weight: bold;
+  text-transform: uppercase;
+  }
+
+  input {
+  width: 100%;
+  border: none;
+  padding: 0.5rem;
+  }
+  }
+
+  form {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+
+  input {
+  flex: 1;
+  padding: 0.5rem;
+  margin-right: 1rem;
+  }
+
+  button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  }
+  }
+
+  button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  }
+
+  .expenses {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .summation {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+
+    div {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
